@@ -1,22 +1,23 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { ion } from 'starlight-ion-theme';
 
 export default defineConfig({
   site: 'https://docs.closm.llc',
   integrations: [
     starlight({
       title: {
-        ja: 'CLOSM Docs',
         en: 'CLOSM Docs',
+        ja: 'CLOSM Docs',
       },
       defaultLocale: 'root',
       locales: {
         root: {
-          label: '日本語',
-          lang: 'ja',
-        },
-        en: {
           label: 'English',
+          lang: 'en',
+        },
+        ja: {
+          label: '日本語',
         },
       },
       social: [
@@ -29,22 +30,27 @@ export default defineConfig({
       sidebar: [
         {
           label: 'CLOSM i',
-          translations: { en: 'CLOSM i' },
+          translations: { ja: 'CLOSM i' },
           items: [
             {
-              label: 'はじめに',
-              translations: { en: 'Introduction' },
+              label: 'Introduction',
+              translations: { ja: 'はじめに' },
               slug: 'i/intro',
             },
             {
-              label: 'チュートリアル',
-              translations: { en: 'Tutorial' },
+              label: 'Tutorial',
+              translations: { ja: 'チュートリアル' },
               slug: 'i/tutorial',
             },
           ],
         },
       ],
-      customCss: ['./src/styles/custom.css'],
+      plugins: [ion()],
+      customCss: [
+        '@fontsource-variable/inter',
+        '@fontsource-variable/noto-sans-jp',
+        './src/styles/custom.css',
+      ],
     }),
   ],
 });

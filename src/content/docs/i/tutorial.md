@@ -1,16 +1,16 @@
 ---
-title: チュートリアル
-description: CLOSM i のチュートリアル
+title: Tutorial
+description: CLOSM i tutorial
 ---
 
-このチュートリアルでは、CLOSM i の基本的な操作方法を説明します。
+This tutorial explains the basic operations of CLOSM i.
 
-## 準備
+## Prerequisites
 
-チュートリアルを始める前に、以下を確認してください。
+Before starting this tutorial, make sure you have:
 
-- CLOSM i のアカウントを持っていること
+- A CLOSM i account
 
-## 基本操作
+## Basic Operations
 
-操作手順は今後追加予定です。
+Step-by-step instructions will be added in the future.

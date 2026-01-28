@@ -1,18 +1,18 @@
 ---
-title: はじめに
-description: CLOSM i の概要と基本的な使い方
+title: Introduction
+description: Overview and basic usage of CLOSM i
 ---
 
-CLOSM i は、CLOSMが提供するプロダクトです。
+CLOSM i is a product provided by CLOSM.
 
-## 概要
+## Overview
 
-このドキュメントでは、CLOSM i の基本的な使い方について説明します。
+This documentation covers the basic usage of CLOSM i.
 
-## 主な機能
+## Key Features
 
-- 機能の説明は今後追加予定です
+- Feature descriptions will be added in the future
 
-## 次のステップ
+## Next Steps
 
-[チュートリアル](/i/tutorial/)に進んで、実際の使い方を学びましょう。
+Proceed to the [Tutorial](/i/tutorial/) to learn how to use CLOSM i.
