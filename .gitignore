@@ -35,7 +35,7 @@ out/
 .astro/
 
 # Claude Code auto-generated files
-src/**/CLAUDE.md
+**/CLAUDE.md
 
 # Cache
 .cache/
