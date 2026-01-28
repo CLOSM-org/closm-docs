@@ -12,19 +12,11 @@ CLOSMのドキュメントサイトです。複数プロダクトのドキュメ
 
 ### 技術スタック
 
-- **フレームワーク**: [Docusaurus](https://docusaurus.io/) (v2/v3)
+- **フレームワーク**: [Starlight](https://starlight.astro.build/) (Astro)
+- **パッケージマネージャ**: pnpm
+- **検索**: Pagefind（Starlight標準搭載）
 - **ホスティング**: AWS S3 + CloudFront
 - **CI/CD**: GitHub Actions
-
-## 選定理由
-
-### Docusaurusを選んだ理由
-
-| 要件 | Docusaurusの対応 |
-|------|------------------|
-| **エンジニア執筆** | Markdown (MDX) で記述可能。Reactコンポーネントを埋め込めるため、リッチなUIを実現可能 |
-| **エンドユーザー向け** | Algolia等の検索プラグイン標準対応。CSS/Reactで自由にカスタマイズ可能 |
-| **低コスト運用** | 完全な静的出力。S3+CloudFrontの従量課金のみでランニングコストはほぼゼロ |
 
 ## サイト構成
 
@@ -32,57 +24,90 @@ CLOSMのドキュメントサイトです。複数プロダクトのドキュメ
 
 ```
 docs.closm.llc/
-├── /                    # ポータルページ（全プロダクトへの入り口）
-├── /i/                  # CLOSM i のドキュメント
-│   ├── /intro           # イントロダクション
-│   └── /tutorial        # チュートリアル
-└── /product-b/          # 将来のプロダクトB用
-    └── ...
+├── /                    # ポータルページ（日本語・デフォルト）
+├── /i/                  # CLOSM i のドキュメント（日本語）
+│   ├── /intro/
+│   └── /tutorial/
+├── /en/                 # ポータルページ（英語）
+└── /en/i/               # CLOSM i のドキュメント（英語）
+    ├── /intro/
+    └── /tutorial/
 ```
 
-### ディレクトリ構成（予定）
+### ディレクトリ構成
 
 ```
 closm-docs/
-├── docusaurus.config.js
+├── .github/workflows/deploy.yml   # CI/CD
+├── public/favicon.svg             # ファビコン
 ├── src/
-│   └── pages/
-│       └── index.js      # ポータルページ（各プロダクトへのリンク）
-└── docs/
-    ├── i/                # CLOSM i 用のドキュメント
-    │   ├── intro.md
-    │   └── tutorial.md
-    └── product-b/        # 将来のプロダクト用
-        └── ...
+│   ├── content.config.ts          # Content Collections設定
+│   ├── content/docs/
+│   │   ├── index.md               # ポータル（日本語）
+│   │   ├── i/
+│   │   │   ├── intro.md           # CLOSM i はじめに
+│   │   │   └── tutorial.md        # CLOSM i チュートリアル
+│   │   └── en/                    # 英語翻訳
+│   │       ├── index.md
+│   │       └── i/
+│   │           ├── intro.md
+│   │           └── tutorial.md
+│   └── styles/custom.css          # カスタムCSS
+├── astro.config.mjs               # Starlight設定
+├── tsconfig.json
+└── package.json
+```
+
+## 開発
+
+```bash
+# 依存パッケージのインストール
+pnpm install
+
+# 開発サーバー起動 (http://localhost:4321)
+pnpm dev
+
+# プロダクションビルド
+pnpm build
+
+# ビルド結果のプレビュー
+pnpm preview
+
+# 型チェック
+pnpm check
 ```
 
 ## デプロイフロー
 
 ```mermaid
 flowchart LR
-    A["エンジニアが<br/>Markdownを執筆"] --> B["GitHubに<br/>Push"]
-    B --> C["GitHub Actions<br/>が発火"]
-    C --> D["npm run build<br/>で静的ファイル生成"]
-    D --> E["S3に同期<br/>aws s3 sync"]
-    E --> F["CloudFront<br/>キャッシュ削除"]
+    A["Markdownを執筆"] --> B["GitHubにPush"]
+    B --> C["GitHub Actions発火"]
+    C --> D["pnpm build"]
+    D --> E["S3に同期"]
+    E --> F["CloudFrontキャッシュ削除"]
     F --> G["デプロイ完了"]
 ```
 
-### デプロイ手順（予定）
+mainブランチへのPushで自動デプロイされます。
 
-1. エンジニアがMarkdownを書いてGitHubにPush
-2. GitHub Actions等のCIが発火
-3. `npm run build` で静的ファイルを生成
-4. AWS CLI等でS3に同期 (`aws s3 sync ./build s3://my-bucket`)
-5. CloudFrontのキャッシュ削除 (`aws cloudfront create-invalidation ...`)
+### 必要なGitHub Secrets
+
+| Secret | 説明 |
+|--------|------|
+| `AWS_ACCESS_KEY_ID` | AWS アクセスキー |
+| `AWS_SECRET_ACCESS_KEY` | AWS シークレットキー |
+| `S3_BUCKET_NAME` | S3バケット名 |
+| `CLOUDFRONT_DISTRIBUTION_ID` | CloudFrontディストリビューションID |
 
 ## 開発方針
 
 - **モノレポ管理**: 全プロダクトのドキュメントを1つのリポジトリで管理
-- **集約型（Centralized）**: 1つのサブドメイン（`docs.closm.llc`）に全ドキュメントを集約
-- **拡張性**: 将来のプロダクト追加に対応可能な構成
+- **集約型**: 1つのサブドメイン（`docs.closm.llc`）に全ドキュメントを集約
+- **i18n**: 日本語をデフォルト（URLプレフィックスなし）、英語は`/en/`プレフィックス
+- **拡張性**: 新しいプロダクトは`src/content/docs/`にディレクトリを追加し、`astro.config.mjs`のサイドバーにグループを追加
 
 ## 参考リンク
 
-- [Docusaurus公式ドキュメント](https://docusaurus.io/)
-- [Docusaurus GitHub](https://github.com/facebook/docusaurus)
+- [Starlight公式ドキュメント](https://starlight.astro.build/)
+- [Astro公式ドキュメント](https://docs.astro.build/)
