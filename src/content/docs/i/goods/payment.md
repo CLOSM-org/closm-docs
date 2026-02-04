@@ -8,72 +8,71 @@ sidebar:
 ## Pricing Structure
 
 ```
-Final Price = Product Cost + Printing Fee + Shipping
+Final Price = Product Cost + Shipping
 ```
 
 | Item | Description |
 |:-----|:------------|
-| **Product Cost** | Case base price |
-| **Printing Fee** | Full-color printing |
-| **Shipping** | Based on destination |
+| **Product Cost** | Product price (shown during selection) |
+| **Shipping** | Based on destination and method |
 
 :::note
-Total shown before order confirmation. No hidden fees.
+Total is shown at checkout.
 :::
 
 ---
 
-## Price Estimates
+## Checkout Flow
 
-| Product | Price Range (excl. shipping) |
-|:--------|:-----------------------------|
-| iPhone Cases | $20 - $30 |
-| Android Cases | $20 - $30 |
+Click "Proceed to Checkout" from the cart to go to the checkout page (`/goods/checkout`).
 
----
+### Step 1: Enter Shipping Address
 
-## Payment Methods
+| Field | Required | Description |
+|:------|:--------:|:------------|
+| **Name** | Yes | Recipient name |
+| **Postal/ZIP Code** | Yes | |
+| **State/Province** | Yes | Select from dropdown |
+| **City** | Yes | |
+| **Address 1** | Yes | Street address |
+| **Address 2** | No | Apt, suite, building |
+| **Phone** | No | |
+
+:::note
+Shipping country is automatically set based on the product added to cart.
+:::
+
+### Step 2: Select Shipping Method
+
+After entering the address, available shipping methods and rates are displayed.
+
+- Shipping cost and delivery time vary by method
+- Select your preferred option
+
+### Step 3: Payment
+
+After selecting shipping method, you'll be redirected to **Stripe** payment page.
 
 | Method | Brands |
 |:-------|:-------|
-| **Credit Cards** | Visa / Mastercard / American Express |
+| **Credit Cards** | Visa / Mastercard / American Express, etc. |
 | **Debit Cards** | Debit cards with above brands |
 
 :::note[Billing]
-Charged **immediately** upon order confirmation. Cannot cancel after production starts.
+Charged upon payment completion. Cannot cancel after production starts.
 :::
 
 ---
 
-## Shipping Address
+## Order Complete
 
-### First Order
+After payment, you'll see the order completion page (`/goods/checkout/success`).
 
-Enter the following:
+- Order ID
+- Order details
+- Total amount
 
-1. **Full Name**
-2. **Postal/ZIP Code**
-3. **Address** (Street, City, State, Country)
-4. **Phone Number**
-
-:::tip[Save Address]
-Check "Save this address" to skip entry for future orders.
-:::
-
-### Later Orders
-
-Select from saved addresses or enter new.
-
----
-
-## Order Flow
-
-1. Enter or select **Shipping Address**
-2. Choose **Payment Method**
-3. Review **Order Details**
-4. Click **"Confirm Order"**
-
-Confirmation email sent after order.
+Track order status in [Order History](/i/goods/history/).
 
 ---
 

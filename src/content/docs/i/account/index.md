@@ -15,7 +15,7 @@ CLOSM i offers three pricing plans.
 | **Create Artworks** | 10/month | Unlimited | Unlimited |
 | **Save Artworks** | Up to 50 | Up to 500 | Unlimited |
 | **Resolution** | Max 2K | Max 4K | Max 8K |
-| **Merchandise** | - | Available | Available |
+| **Merchandise** | Available | Available | Available |
 | **NFT Mints** | - | 3/month | 30/month |
 | **Priority Rendering** | - | - | Available |
 | **Ad-free** | - | Yes | Yes |
@@ -30,6 +30,7 @@ For those who want to try fractal art creation.
 - Save up to 50 artworks
 - All basic features available
 - Publish to gallery
+- Create custom merchandise
 
 ### Lite Plan
 
@@ -37,7 +38,6 @@ For those who want to seriously enjoy fractal art.
 
 - Unlimited artwork creation
 - 4K resolution output
-- Merchandise creation
 - 3 NFT mints per month
 - Ad-free experience
 
@@ -92,10 +92,10 @@ Downgrades apply at end of current billing period.
 A: Yes. The Free plan has no expiration.
 
 ### Q: Is annual billing available?
-A: Currently monthly only. Annual billing coming soon.
+A: Currently monthly only.
 
 ### Q: Are there student discounts?
-A: Currently in preparation.
+A: Student discounts are not currently available.
 
 ## Next Steps
 

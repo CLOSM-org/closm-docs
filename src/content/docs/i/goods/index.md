@@ -15,7 +15,7 @@ Turn your fractal art into **custom merchandise** like phone cases.
 
 | Page | Content |
 |:-----|:--------|
-| [Products](/i/goods/products/) | Supported phone models, upcoming products |
+| [Products](/i/goods/products/) | Supported products |
 | [How to Create](/i/goods/create/) | Step-by-step creation process |
 | [Design Editor](/i/goods/editor/) | How to use the design tool |
 | [Payment](/i/goods/payment/) | Pricing, payment methods |
@@ -27,23 +27,20 @@ Turn your fractal art into **custom merchandise** like phone cases.
 
 ## Requirements
 
-**Lite plan or higher** required.
+- Must be logged in
+- Must have your own artwork
 
-| Plan | Access |
-|:----:|:------:|
-| Free | ❌ |
-| Lite | ✅ |
-| Premium | ✅ |
-
-→ [Pricing Plans](/i/account/plans/)
+Available on all plans (Free / Lite / Premium).
 
 ---
 
 ## Quick Start
 
-1. Click **"Create Merchandise"** on artwork detail page
-2. Select product and device model
-3. Adjust design
-4. Confirm order
+1. Select artwork on the goods page
+2. Select shipping country
+3. Select product and device model
+4. Adjust design
+5. Add to cart
+6. Checkout
 
 → [View detailed steps](/i/goods/create/)

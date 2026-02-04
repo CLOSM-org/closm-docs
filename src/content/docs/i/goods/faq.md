@@ -19,7 +19,7 @@ No changes after confirmation. Place a new order and cancel the existing one.
 
 ### Can I order multiple items at once?
 
-Currently one item at a time. Multi-item ordering planned for future.
+Currently one item at a time.
 
 ---
 
@@ -77,15 +77,13 @@ Contact support within 7 days with photos. We'll arrange replacement.
 
 ## Other
 
-### Is the artist notified when I use their work?
+### Who is merchandise for?
 
-No. Currently no notification feature.
+Merchandise you create is for **personal use** or as **gifts**.
 
-Royalty feature planned for future.
-
-### Can I sell merchandise I create?
-
-Currently personal use only. E-commerce integration planned.
+:::note[Commercial Use]
+Selling merchandise to third parties is not currently supported.
+:::
 
 ---
 
@@ -95,9 +93,8 @@ Currently personal use only. E-commerce integration planned.
 
 | Cause | Solution |
 |:------|:---------|
-| Using Free plan | [Upgrade to Lite+](/i/account/plans/) |
 | Not logged in | Log in |
-| Artwork is private (others') | Only public works allowed |
+| No artworks created | Create an artwork first |
 
 ### Design editor not working
 

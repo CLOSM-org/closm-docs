@@ -28,7 +28,7 @@ CLOSM i offers three plans:
 | Feature | Free | Lite | Premium |
 |---------|------|------|---------|
 | Create Artworks | Limited | Unlimited | Unlimited |
-| Create Merchandise | - | Available | Available |
+| Create Merchandise | Available | Available | Available |
 | Mint NFTs | - | 3/month | 30/month |
 | High Resolution | - | - | Available |
 

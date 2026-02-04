@@ -5,24 +5,13 @@ sidebar:
   order: 4
 ---
 
-The design editor lets you freely position your artwork on the phone case.
+The design editor lets you adjust artwork placement on the product template.
 
 ---
 
-## Layout
+## Overview
 
-```
-┌─────────────────────────────────────────┐
-│  Toolbar                                │
-├─────────────────────┬───────────────────┤
-│                     │                   │
-│    Preview          │   Control         │
-│    Area             │   Panel           │
-│                     │                   │
-├─────────────────────┴───────────────────┤
-│  Confirm Buttons                        │
-└─────────────────────────────────────────┘
-```
+After product selection, the design editor displays with the Printful mockup template. Adjust your artwork's position and size on the canvas to fit within the print area.
 
 ---
 
@@ -30,45 +19,36 @@ The design editor lets you freely position your artwork on the phone case.
 
 | Action | Method |
 |:-------|:-------|
-| **Move** | Drag the image |
-| **Scale** | Pinch or slider |
-| **Rotate** | Handle or slider |
-| **Reset** | Reset button |
-
----
-
-## Control Panel
-
-| Control | Function | Range |
-|:--------|:---------|:------|
-| **X Position** | Horizontal fine-tune | -100% to +100% |
-| **Y Position** | Vertical fine-tune | -100% to +100% |
-| **Scale** | Size adjustment | 50% to 200% |
-| **Rotation** | Angle setting | 0° to 360° |
+| **Move** | Drag the artwork |
+| **Resize** | Drag the corners |
 
 ---
 
 ## Design Tips
 
-### ✅ Recommended
+### Recommended
 
 | Tip | Reason |
 |:----|:-------|
-| Leave margins | Don't fill to edges |
+| Stay within print area | Content outside won't print |
 | Center focus | Place key elements in center |
-| Check 3D preview | Verify actual appearance |
 
-### ❌ Avoid
+### Avoid
 
 | Issue | Reason |
 |:------|:-------|
 | Important parts at edges | May be cut during printing |
 | Extreme enlargement | Image quality degrades |
-| Ignoring camera cutout | Position varies by model |
 
 :::caution[Print Area]
-The **dotted line** in preview indicates the guaranteed print area. Keep important elements inside.
+Position your artwork within the print area on the template. Content outside will not be printed.
 :::
+
+---
+
+## After Confirming
+
+When you confirm your design adjustments, a mockup image is generated and you'll proceed to the preview screen.
 
 ---
 

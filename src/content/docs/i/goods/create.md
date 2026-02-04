@@ -5,79 +5,93 @@ sidebar:
   order: 3
 ---
 
-Create merchandise in **4 steps**.
+Here's the flow from creating merchandise to adding to cart.
 
 ```
-Choose Artwork → Select Product → Adjust Design → Order
+Select Artwork → Select Country → Select Product → Select Model → Adjust Design → Preview → Add to Cart
 ```
 
 ---
 
-## Step 1: Choose Artwork
+## Step 1: Select Artwork
 
-### From Your Own Artworks
+Go to the goods page (`/goods`) and select the artwork you want to use.
 
-1. Open **My Page**
-2. Select **My Artworks** tab
-3. Click on the artwork you want
-4. Click **"Create Merchandise"**
+1. Click **"Select Artwork"** button
+2. Artwork selection modal opens
+3. Choose an artwork from your collection
 
-### From Other Users' Artworks
-
-1. Browse the **Gallery**
-2. Click on an artwork you like
-3. Click **"Create Merchandise"**
-
-:::note[Artwork Requirements]
-- Your artworks: Public or private OK
-- Others' artworks: **Public only**
+:::note
+Login is required to create merchandise.
 :::
 
-### What Works Best
+---
 
-- ✅ High contrast
-- ✅ Clear focal point in center
-- ✅ Not overly detailed patterns
+## Step 2: Select Shipping Country
+
+Select the country for shipping.
+
+1. Choose your shipping country from the list
+2. Available products will be displayed based on the selected country
+
+:::note[Country-Specific Products]
+Product lineup and supported models vary by shipping country.
+:::
 
 ---
 
-## Step 2: Select Product
+## Step 3: Select Product
 
-1. Choose **Product Category**
-   - Example: Phone Case
+Available products are displayed as cards.
 
-2. Select **Device/Model**
-   - Manufacturer → Series → Specific model
-
-3. Choose **Color** (if applicable)
-   - Clear / Matte / Glossy, etc.
-
-→ [View supported models](/i/goods/products/)
+1. Select the product you want
+   - Example: Snap Case, Tough Case, etc.
 
 ---
 
-## Step 3: Adjust Design
+## Step 4: Select Model
 
-Use the design editor to position your artwork.
+Supported device models for the selected product are displayed.
 
-1. Check result in **Preview**
-2. Adjust **position, size, angle**
-3. Click **"Next"** when satisfied
+1. Select your device model
+2. Price is displayed
+3. Click **"Proceed"**
+
+---
+
+## Step 5: Adjust Design
+
+Adjust artwork placement in the design editor.
+
+1. Artwork is placed on the product template
+2. **Drag** to adjust position
+3. **Resize** by dragging corners
+4. Position within the print area
+5. Click **"Confirm"** when done
 
 → [Design Editor details](/i/goods/editor/)
 
 ---
 
-## Step 4: Order
+## Step 6: Preview
 
-1. Enter or select **Shipping Address**
-2. Choose **Payment Method**
-3. Review **Order Details**
-4. Click **"Confirm Order"**
+Review the actual mockup image.
 
-:::note[After Confirmation]
-Confirmation email will be sent. Track status in [Order History](/i/goods/history/).
-:::
+1. Check mockup from multiple views
+2. Verify product info and price
+3. Click **"Add to Cart"** if satisfied
+
+Click **"Back to Edit"** to return to editing.
+
+---
+
+## After Adding to Cart
+
+You'll be redirected to the cart page (`/goods/cart`).
+
+- Adjust quantity
+- Remove items
+- Proceed to checkout
 
 → [Payment details](/i/goods/payment/)
 
@@ -86,5 +100,6 @@ Confirmation email will be sent. Track status in [Order History](/i/goods/histor
 ## Related Pages
 
 - [Merchandise Overview](/i/goods/)
+- [Products](/i/goods/products/)
 - [Design Editor](/i/goods/editor/)
 - [Payment](/i/goods/payment/)
