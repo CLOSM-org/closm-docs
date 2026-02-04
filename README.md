@@ -51,46 +51,14 @@ closm-docs/
 
 ## Deployment
 
-```mermaid
-flowchart LR
-    A["Push to main"] --> B["GitHub Actions"]
-    B --> C["pnpm build"]
-    C --> D["S3 sync"]
-    D --> E["CloudFront invalidation"]
-```
-
-### GitHub Secrets
-
-| Secret | Value |
-|--------|-------|
-| `AWS_ACCESS_KEY_ID` | GithubActionsExecuter |
-| `AWS_SECRET_ACCESS_KEY` | GithubActionsExecuter |
-| `AWS_REGION` | `ap-northeast-1` |
-| `AWS_S3_BUCKET_NAME` | `closm-docs-prod` |
-| `CLOUDFRONT_DISTRIBUTION_ID` | `EADR14ROCZOLB` |
-
-### AWS Resources
-
-| Resource | ID |
-|----------|-----|
-| S3 Bucket | `closm-docs-prod` |
-| CloudFront Distribution | `EADR14ROCZOLB` |
-| CloudFront Function | `closm-docs-url-rewrite` |
-| OAC | `E3Q93NYUT5E9J7` |
-
-### CloudFront Function Update
+Push to `main` triggers auto-deploy to https://docs.closm.llc
 
 ```bash
-# Update function (when url-rewrite.js changes)
-aws cloudfront update-function \
-  --name closm-docs-url-rewrite \
-  --function-config Comment="URL rewrite for static site",Runtime=cloudfront-js-2.0 \
-  --function-code fileb://infrastructure/cloudfront/url-rewrite.js \
-  --if-match <ETAG>
-
-# Publish
-aws cloudfront publish-function --name closm-docs-url-rewrite --if-match <ETAG>
+git push origin main                    # Deploy
+gh run list --limit 1                   # Check status
 ```
+
+**Details**: [docs/deployment/README.md](./docs/deployment/README.md)
 
 ## Adding New Products
 
