@@ -79,6 +79,6 @@ sidebar:
 
 ## 関連ページ
 
-- [グッズ販売 トップ](/ja/i/goods/)
+- [オリジナルグッズ トップ](/ja/i/goods/)
 - [配送](/ja/i/goods/shipping/)
 - [注文履歴](/ja/i/goods/history/)

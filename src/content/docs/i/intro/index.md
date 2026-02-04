@@ -1,11 +1,11 @@
 ---
 title: About CLOSM i
-description: A platform for creating, sharing, and monetizing Mandelbrot fractal art
+description: A platform for creating and sharing Mandelbrot fractal art
 sidebar:
   order: 1
 ---
 
-CLOSM i is a platform where anyone can easily create, share, and monetize mathematically beautiful Mandelbrot fractal art.
+CLOSM i is a platform where anyone can easily create and share mathematically beautiful Mandelbrot fractal art.
 
 ## What You Can Do with CLOSM i
 
@@ -15,8 +15,8 @@ Generate unique fractal art by adjusting parameters. No math knowledge required.
 ### Share Your Work
 Publish your creations to the gallery. Browse other artists' works and follow your favorites.
 
-### Sell Merchandise
-Turn your artwork into phone cases and other merchandise. No inventory needed (Print on Demand).
+### Create Merchandise
+Turn your artwork into phone cases and other custom merchandise. Print on Demand means each item is made when ordered.
 
 ### Mint NFTs
 Record your artwork on the blockchain as an NFT to prove digital ownership. Supports Polygon and Ethereum.
@@ -28,7 +28,7 @@ CLOSM i offers three plans:
 | Feature | Free | Lite | Premium |
 |---------|------|------|---------|
 | Create Artworks | Limited | Unlimited | Unlimited |
-| Sell Merchandise | - | Available | Available |
+| Create Merchandise | - | Available | Available |
 | Mint NFTs | - | 3/month | 30/month |
 | High Resolution | - | - | Available |
 

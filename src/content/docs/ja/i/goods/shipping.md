@@ -63,6 +63,6 @@ Printful の配送ネットワークにより、**世界200以上の国・地域
 
 ## 関連ページ
 
-- [グッズ販売 トップ](/ja/i/goods/)
+- [オリジナルグッズ トップ](/ja/i/goods/)
 - [注文履歴](/ja/i/goods/history/)
 - [FAQ](/ja/i/goods/faq/)

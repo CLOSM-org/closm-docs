@@ -85,6 +85,6 @@ sidebar:
 
 ## 関連ページ
 
-- [グッズ販売 トップ](/ja/i/goods/)
+- [オリジナルグッズ トップ](/ja/i/goods/)
 - [デザインエディタ](/ja/i/goods/editor/)
 - [注文・支払い](/ja/i/goods/payment/)
