@@ -1,115 +1,109 @@
 # CLOSM Docs
 
-CLOSMのドキュメントサイトです。複数プロダクトのドキュメントを集約管理する企業向けドキュメントポータルです。
+CLOSM のドキュメントポータル。複数プロダクトのドキュメントを集約管理。
 
-## 概要
+**URL**: https://docs.closm.llc/
 
-### 目的
+## Quick Start
 
-- **エンジニア主導**: Markdownで執筆し、Gitでバージョン管理
-- **エンドユーザー向け**: 検索機能と親しみやすいUIで使いやすいドキュメント
-- **低コスト運用**: S3 + CloudFrontで静的ホスティング
-
-### 技術スタック
-
-- **フレームワーク**: [Starlight](https://starlight.astro.build/) (Astro)
-- **テーマ**: [Ion](https://github.com/HiDeoo/starlight-ion-theme)
-- **パッケージマネージャ**: pnpm
-- **検索**: Pagefind（Starlight標準搭載）
-- **ホスティング**: AWS S3 + CloudFront
-- **CI/CD**: GitHub Actions
-
-## サイト構成
-
-### URL構造
-
-```
-docs.closm.llc/
-├── /                    # ポータルページ（英語・デフォルト）
-├── /i/                  # CLOSM i のドキュメント（英語）
-│   ├── /intro/
-│   └── /tutorial/
-├── /ja/                 # ポータルページ（日本語）
-└── /ja/i/               # CLOSM i のドキュメント（日本語）
-    ├── /intro/
-    └── /tutorial/
+```bash
+pnpm install    # Install dependencies
+pnpm dev        # Start dev server (http://localhost:4321)
+pnpm build      # Production build
 ```
 
-### ディレクトリ構成
+## Tech Stack
+
+| Category | Tool |
+|----------|------|
+| Framework | [Starlight](https://starlight.astro.build/) (Astro) |
+| Theme | [Ion](https://github.com/HiDeoo/starlight-ion-theme) |
+| Search | Pagefind |
+| Hosting | AWS S3 + CloudFront |
+| CI/CD | GitHub Actions |
+
+## Directory Structure
 
 ```
 closm-docs/
-├── .github/workflows/deploy.yml   # CI/CD
-├── public/favicon.svg             # ファビコン
+├── .github/workflows/deploy.yml   # CI/CD pipeline
+├── infrastructure/                # AWS config templates
+│   ├── cloudfront/url-rewrite.js  # CloudFront Function
+│   ├── iam/deploy-policy.json     # IAM policy reference
+│   └── s3/bucket-policy.json      # S3 policy reference
 ├── src/
-│   ├── content.config.ts          # Content Collections設定
-│   ├── content/docs/
-│   │   ├── index.md               # ポータル（英語）
-│   │   ├── i/
-│   │   │   ├── intro.md           # CLOSM i Introduction
-│   │   │   └── tutorial.md        # CLOSM i Tutorial
-│   │   └── ja/                    # 日本語翻訳
-│   │       ├── index.md
-│   │       └── i/
-│   │           ├── intro.md
-│   │           └── tutorial.md
-│   └── styles/custom.css          # カスタムCSS（フォント・タイポグラフィ）
-├── astro.config.mjs               # Starlight設定
-├── tsconfig.json
+│   ├── content/docs/              # Documentation content
+│   │   ├── index.md               # Portal (English)
+│   │   ├── i/                     # CLOSM i docs
+│   │   └── ja/                    # Japanese translations
+│   └── styles/custom.css          # Typography settings
+├── astro.config.mjs               # Starlight config
 └── package.json
 ```
 
-## 開発
+## URL Structure
 
-```bash
-# 依存パッケージのインストール
-pnpm install
+| Path | Content |
+|------|---------|
+| `/` | Portal (English, default) |
+| `/i/` | CLOSM i documentation |
+| `/ja/` | Japanese translations |
 
-# 開発サーバー起動 (http://localhost:4321)
-pnpm dev
-
-# プロダクションビルド
-pnpm build
-
-# ビルド結果のプレビュー
-pnpm preview
-
-# 型チェック
-pnpm check
-```
-
-## デプロイフロー
+## Deployment
 
 ```mermaid
 flowchart LR
-    A["Markdownを執筆"] --> B["GitHubにPush"]
-    B --> C["GitHub Actions発火"]
-    C --> D["pnpm build"]
-    D --> E["S3に同期"]
-    E --> F["CloudFrontキャッシュ削除"]
-    F --> G["デプロイ完了"]
+    A["Push to main"] --> B["GitHub Actions"]
+    B --> C["pnpm build"]
+    C --> D["S3 sync"]
+    D --> E["CloudFront invalidation"]
 ```
 
-mainブランチへのPushで自動デプロイされます。
+### GitHub Secrets
 
-### 必要なGitHub Secrets
+| Secret | Value |
+|--------|-------|
+| `AWS_ACCESS_KEY_ID` | GithubActionsExecuter |
+| `AWS_SECRET_ACCESS_KEY` | GithubActionsExecuter |
+| `AWS_REGION` | `ap-northeast-1` |
+| `AWS_S3_BUCKET_NAME` | `closm-docs-prod` |
+| `CLOUDFRONT_DISTRIBUTION_ID` | `EADR14ROCZOLB` |
 
-| Secret | 説明 | 値 |
-|--------|------|-----|
-| `AWS_ACCESS_KEY_ID` | AWS アクセスキー | GithubActionsExecuter |
-| `AWS_SECRET_ACCESS_KEY` | AWS シークレットキー | GithubActionsExecuter |
-| `AWS_REGION` | AWS リージョン | `ap-northeast-1` |
-| `AWS_S3_BUCKET_NAME` | S3バケット名 | `closm-docs-prod` |
-| `CLOUDFRONT_DISTRIBUTION_ID` | CloudFrontディストリビューションID | `EADR14ROCZOLB` |
+### AWS Resources
 
-## 開発方針
+| Resource | ID |
+|----------|-----|
+| S3 Bucket | `closm-docs-prod` |
+| CloudFront Distribution | `EADR14ROCZOLB` |
+| CloudFront Function | `closm-docs-url-rewrite` |
+| OAC | `E3Q93NYUT5E9J7` |
 
-- **モノレポ管理**: 全プロダクトのドキュメントを1つのリポジトリで管理
-- **集約型**: 1つのサブドメイン（`docs.closm.llc`）に全ドキュメントを集約
-- **i18n**: 英語をデフォルト（URLプレフィックスなし）、日本語は`/ja/`プレフィックス
-- **拡張性**: 新しいプロダクトは`src/content/docs/`にディレクトリを追加し、`astro.config.mjs`のサイドバーにグループを追加
+### CloudFront Function Update
 
-## 参考リンク
+```bash
+# Update function (when url-rewrite.js changes)
+aws cloudfront update-function \
+  --name closm-docs-url-rewrite \
+  --function-config Comment="URL rewrite for static site",Runtime=cloudfront-js-2.0 \
+  --function-code fileb://infrastructure/cloudfront/url-rewrite.js \
+  --if-match <ETAG>
 
-- [Starlight公式ドキュメント](https://starlight.astro.build/)
-- [Astro公式ドキュメント](https://docs.astro.build/)
+# Publish
+aws cloudfront publish-function --name closm-docs-url-rewrite --if-match <ETAG>
+```
+
+## Adding New Products
+
+1. Create `src/content/docs/<product>/` directory
+2. Add sidebar group in `astro.config.mjs`
+3. Add Japanese translation in `src/content/docs/ja/<product>/`
+
+## i18n
+
+- **Default**: English (no URL prefix)
+- **Japanese**: `/ja/` prefix
+
+## References
+
+- [Starlight Documentation](https://starlight.astro.build/)
+- [Astro Documentation](https://docs.astro.build/)

@@ -30,19 +30,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'CLOSM i',
-          translations: { ja: 'CLOSM i' },
-          items: [
-            {
-              label: 'Introduction',
-              translations: { ja: 'はじめに' },
-              slug: 'i/intro',
-            },
-            {
-              label: 'Tutorial',
-              translations: { ja: 'チュートリアル' },
-              slug: 'i/tutorial',
-            },
-          ],
+          autogenerate: { directory: 'i' },
         },
       ],
       plugins: [ion()],
