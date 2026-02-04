@@ -94,12 +94,13 @@ mainブランチへのPushで自動デプロイされます。
 
 ### 必要なGitHub Secrets
 
-| Secret | 説明 |
-|--------|------|
-| `AWS_ACCESS_KEY_ID` | AWS アクセスキー |
-| `AWS_SECRET_ACCESS_KEY` | AWS シークレットキー |
-| `S3_BUCKET_NAME` | S3バケット名 |
-| `CLOUDFRONT_DISTRIBUTION_ID` | CloudFrontディストリビューションID |
+| Secret | 説明 | 値 |
+|--------|------|-----|
+| `AWS_ACCESS_KEY_ID` | AWS アクセスキー | GithubActionsExecuter |
+| `AWS_SECRET_ACCESS_KEY` | AWS シークレットキー | GithubActionsExecuter |
+| `AWS_REGION` | AWS リージョン | `ap-northeast-1` |
+| `AWS_S3_BUCKET_NAME` | S3バケット名 | `closm-docs-prod` |
+| `CLOUDFRONT_DISTRIBUTION_ID` | CloudFrontディストリビューションID | `EADR14ROCZOLB` |
 
 ## 開発方針
 

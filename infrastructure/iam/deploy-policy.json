@@ -1,0 +1,34 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudFrontListPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "cloudfront:ListDistributions",
+        "cloudfront:ListStreamingDistributions"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "S3AndCloudFrontDeployPermissions",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:ListBucket",
+        "cloudfront:GetDistribution",
+        "cloudfront:GetDistributionConfig",
+        "cloudfront:ListInvalidations",
+        "cloudfront:GetInvalidation",
+        "cloudfront:CreateInvalidation"
+      ],
+      "Resource": [
+        "arn:aws:s3:::closm-docs-prod/*",
+        "arn:aws:s3:::closm-docs-prod",
+        "arn:aws:cloudfront::448070627661:distribution/EADR14ROCZOLB"
+      ]
+    }
+  ]
+}
