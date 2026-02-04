@@ -2,8 +2,7 @@
 title: About NFT
 description: Mint your fractal art as NFTs
 sidebar:
-  label: NFT
-  order: 5
+  order: 1
 ---
 
 On CLOSM i, you can record your fractal art on the blockchain as NFTs (Non-Fungible Tokens).

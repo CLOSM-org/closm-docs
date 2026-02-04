@@ -2,7 +2,6 @@
 title: CLOSM iとは
 description: マンデルブロフラクタルアートを作成・共有・収益化できるプラットフォーム
 sidebar:
-  label: はじめに
   order: 1
 ---
 

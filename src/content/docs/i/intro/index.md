@@ -2,7 +2,6 @@
 title: About CLOSM i
 description: A platform for creating, sharing, and monetizing Mandelbrot fractal art
 sidebar:
-  label: Getting Started
   order: 1
 ---
 

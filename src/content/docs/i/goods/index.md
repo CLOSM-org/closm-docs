@@ -1,9 +1,8 @@
 ---
-title: Merchandise
+title: About Merchandise
 description: Turn your fractal art into custom products
 sidebar:
-  label: Merchandise
-  order: 4
+  order: 1
 ---
 
 Turn your fractal art into **custom merchandise** like phone cases.

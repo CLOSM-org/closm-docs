@@ -2,8 +2,7 @@
 title: Browse Artworks
 description: Discover and explore artworks in the gallery
 sidebar:
-  label: Gallery
-  order: 3
+  order: 1
 ---
 
 The CLOSM i gallery lets you browse fractal art created by artists worldwide.

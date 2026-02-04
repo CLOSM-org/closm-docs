@@ -2,8 +2,7 @@
 title: NFTとは
 description: フラクタルアートをNFTとしてミントする
 sidebar:
-  label: NFT
-  order: 5
+  order: 1
 ---
 
 CLOSM i では、作成したフラクタルアートをNFT（Non-Fungible Token）としてブロックチェーンに記録できます。

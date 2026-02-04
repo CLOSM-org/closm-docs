@@ -2,8 +2,7 @@
 title: 料金プラン
 description: CLOSM i の料金プランと機能比較
 sidebar:
-  label: アカウント
-  order: 6
+  order: 1
 ---
 
 CLOSM i は3つの料金プランを提供しています。

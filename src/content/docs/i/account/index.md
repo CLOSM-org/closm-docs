@@ -2,8 +2,7 @@
 title: Pricing Plans
 description: CLOSM i pricing plans and feature comparison
 sidebar:
-  label: Account
-  order: 6
+  order: 1
 ---
 
 CLOSM i offers three pricing plans.

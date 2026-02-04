@@ -2,8 +2,7 @@
 title: Create Artwork
 description: Basic guide to creating fractal art
 sidebar:
-  label: Create
-  order: 2
+  order: 1
 ---
 
 This guide provides detailed instructions for creating fractal art on CLOSM i.

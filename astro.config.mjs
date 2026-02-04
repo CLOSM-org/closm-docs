@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { ion } from 'starlight-ion-theme';
+import starlightAutoSidebar from 'starlight-auto-sidebar';
 
 export default defineConfig({
   site: 'https://docs.closm.llc',
@@ -33,7 +34,7 @@ export default defineConfig({
           autogenerate: { directory: 'i' },
         },
       ],
-      plugins: [ion()],
+      plugins: [starlightAutoSidebar(), ion()],
       customCss: [
         '@fontsource-variable/inter',
         '@fontsource-variable/noto-sans-jp',

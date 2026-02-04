@@ -2,8 +2,7 @@
 title: 作品を作る
 description: フラクタルアートの基本的な作成方法
 sidebar:
-  label: アート作成
-  order: 2
+  order: 1
 ---
 
 CLOSM i でフラクタルアートを作成する方法を詳しく説明します。

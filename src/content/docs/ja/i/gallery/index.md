@@ -2,8 +2,7 @@
 title: 作品を探す
 description: ギャラリーで作品を閲覧・発見する
 sidebar:
-  label: ギャラリー
-  order: 3
+  order: 1
 ---
 
 CLOSM i のギャラリーでは、世界中のアーティストが作成したフラクタルアートを閲覧できます。
