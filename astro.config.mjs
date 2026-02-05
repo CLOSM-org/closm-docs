@@ -21,13 +21,7 @@ export default defineConfig({
           label: '日本語',
         },
       },
-      social: [
-        {
-          icon: 'github',
-          label: 'GitHub',
-          href: 'https://github.com/closm',
-        },
-      ],
+      social: [],
       sidebar: [
         {
           label: 'CLOSM i',
