@@ -1,299 +1,232 @@
 ---
-title: Testing Guide
-description: NFT minting tests in development and staging environments
+title: Testing Environment
+description: Try NFT minting in the test environment
 sidebar:
   order: 7
 ---
 
-This guide explains how to test NFT functionality in development (dev) and staging (stg) environments.
+CLOSM i provides a **test environment separate from production**.
 
-:::note[Target Audience]
-This page is for developers and QA teams. General users should use the production environment.
+In the test environment, you can experience NFT minting **without using real money**.
+
+---
+
+## What is the Test Environment?
+
+> 💡 The test environment is prepared for feature verification and practice before production release.
+
+### Differences from Production
+
+| Item | Test Environment | Production |
+|:-----|:-----------------|:-----------|
+| URL | Test URL | https://i.closm.llc |
+| Money used | **Free test tokens** | Real cryptocurrency |
+| NFT value | None (practice) | Real NFTs |
+| Blockchain | Testnet | Mainnet |
+
+:::tip[Feel free to try]
+No real money is spent in the test environment. It's okay to make mistakes.
 :::
 
 ---
 
-## Test Environment Overview
+## How to Identify Test Environment
 
-### Environments and Networks
+In the test environment, you can distinguish it from production by these indicators.
 
-| Environment | Network | Purpose |
-|-------------|---------|---------|
-| development | Testnet | Local development, verification |
-| staging | Testnet | Pre-release testing |
-| production | Mainnet | Production use |
+### 🧪 Testnet Banner
 
-### Test Networks
+A warning banner appears at the top of the page.
 
-| Chain | Testnet Name | Chain ID |
-|-------|--------------|----------|
-| Polygon | Polygon Amoy | 80002 |
-| Ethereum | Sepolia | 11155111 |
+```
+🧪 Testnet Environment
+```
 
-Test environments use **test tokens** (free to obtain) instead of real cryptocurrency.
+### Currency Notation
+
+| Production | Test Environment |
+|:-----------|:-----------------|
+| MATIC | **t**MATIC |
+| ETH | **t**ETH |
+
+The "**t**" prefix indicates test tokens.
+
+### Chain Names
+
+| Production | Test Environment |
+|:-----------|:-----------------|
+| Polygon | 🧪 Polygon Amoy |
+| Ethereum | 🧪 Sepolia |
 
 ---
 
-## Prerequisites
+## What You Need for Testing
 
-### 1. MetaMask Setup
+### 1. Access to Test Environment
 
-If MetaMask is not installed, set it up first.
+The test environment URL will be provided by your administrator.
 
-→ [Wallet Setup](/i/nft/setup/)
+:::note[If you don't know how to access]
+Please contact your team administrator or development team.
+:::
 
-### 2. Adding Test Networks
+### 2. Test Account
 
-Add test networks to MetaMask.
+Log in with a test environment-specific account.
 
-#### Adding Polygon Amoy
+- This is **different** from your production account
+- Account information is provided by your administrator
+
+### 3. MetaMask Wallet
+
+MetaMask is required for NFT minting.
+
+→ [Wallet Setup Details](/i/nft/setup/)
+
+### 4. Test Tokens (Free)
+
+For gas fees in the test environment, you'll use **free test tokens**.
+
+---
+
+## How to Get Test Tokens
+
+### Polygon Amoy (Test MATIC)
+
+1. Go to **[Polygon Faucet](https://faucet.polygon.technology/)**
+2. Select "**Amoy**"
+3. Paste your MetaMask wallet address
+4. Click "**Submit**"
+
+Test MATIC will arrive within a few minutes.
+
+:::tip[Recommended amount]
+0.5–1 MATIC is enough for multiple tests.
+:::
+
+### Sepolia (Test ETH)
+
+1. Go to **[Sepolia Faucet](https://sepoliafaucet.com/)**
+2. Create a free account and log in
+3. Paste your MetaMask wallet address
+4. Click "**Send Me ETH**"
+
+:::note[Daily limits]
+Faucets have daily limits. If you need more, try again the next day.
+:::
+
+---
+
+## Adding Testnet to MetaMask
+
+To use the test environment, add the test network to MetaMask.
+
+### Adding Polygon Amoy
+
+1. Open MetaMask
+2. Click the network name at the top
+3. Select "**Add network**"
+4. Click "**Add a network manually**"
+5. Enter the following and save:
 
 | Field | Value |
-|-------|-------|
-| Network Name | Polygon Amoy |
+|:------|:------|
+| Network Name | `Polygon Amoy` |
 | RPC URL | `https://rpc-amoy.polygon.technology/` |
-| Chain ID | 80002 |
-| Currency Symbol | MATIC |
+| Chain ID | `80002` |
+| Currency Symbol | `MATIC` |
 | Block Explorer | `https://amoy.polygonscan.com` |
 
-**Steps:**
-1. Open MetaMask
-2. Network selector → "Add network"
-3. Select "Add a network manually"
-4. Enter the information above and save
-
-#### Adding Sepolia
-
-| Field | Value |
-|-------|-------|
-| Network Name | Sepolia |
-| RPC URL | `https://rpc.sepolia.org` |
-| Chain ID | 11155111 |
-| Currency Symbol | ETH |
-| Block Explorer | `https://sepolia.etherscan.io` |
-
-:::tip
-Sepolia may appear as a preset when you enable "Show test networks" in MetaMask settings.
-:::
-
-### 3. Obtaining Test Tokens
-
-You need free test tokens for gas fees on testnets.
-
-#### Polygon Amoy (Test MATIC)
-
-1. Go to [Polygon Faucet](https://faucet.polygon.technology/)
-2. Select "Amoy"
-3. Enter your MetaMask wallet address
-4. Click "Submit"
-5. Test MATIC arrives within minutes
-
-**Recommended amount**: 0.5–1 MATIC (sufficient for multiple tests)
-
-#### Sepolia (Test ETH)
-
-1. Go to [Sepolia Faucet](https://sepoliafaucet.com/)
-2. Log in with an Alchemy account (free)
-3. Enter your MetaMask wallet address
-4. Click "Send Me ETH"
-
-**Recommended amount**: 0.1–0.5 ETH
-
-:::note[Faucet Limits]
-Faucets have daily limits. If needed, try again the next day.
-:::
-
 ---
 
-## Test Procedure
+## Testing Steps
 
-### Step 1: Verify Environment
+### Step 1: Log in to Test Environment
 
-Access the development or staging environment.
-
-Test environments display:
-
-- **Testnet Banner**: "🧪 Testnet Environment" warning at the top
-- **🧪 in Chain Names**: Dropdown shows "🧪 Polygon Amoy"
-- **Currency Notation**: tMATIC / tETH (indicating test tokens)
+1. Access the test environment URL
+2. Log in with your test account
+3. Verify the 🧪 mark is displayed
 
 ### Step 2: Connect Wallet
 
 1. Open the NFT page
-2. Click "Connect" in the "Wallet Connection" section
+2. Click "**Connect Wallet**"
 3. Approve in MetaMask
 
-After connecting, verify:
-- Wallet address is displayed
-- Test token balance is shown
+### Step 3: Select Artwork
 
-### Step 3: Prepare Test Artwork
-
-Artwork is needed in the test environment database.
-
-- **Development**: Use artwork from local DB or dev DB
-- **Staging**: Use artwork from staging DB
-
-:::note
-Create artwork with your test account beforehand.
-:::
+Select one artwork to mint.
 
 ### Step 4: Select Chain
 
-Choose a testnet from the dropdown.
+| Recommended | Description |
+|:------------|:------------|
+| **🧪 Polygon Amoy** | Low gas fees, quick completion (beginner-friendly) |
+| 🧪 Sepolia | Ethereum testing |
 
-| Option | Description |
-|--------|-------------|
-| 🧪 Polygon Amoy | Polygon testnet (recommended) |
-| 🧪 Sepolia | Ethereum testnet |
+### Step 5: Execute Mint
 
-:::tip[Recommended]
-For initial testing, use **Polygon Amoy**. Gas fees are low and processing is fast.
-:::
-
-### Step 5: Check Gas Fees
-
-Gas estimates are displayed.
-
-Example display in test environment:
-```
-Estimated Gas: 0.02 tMATIC
-🧪 Not real gas cost
-```
-
-- **tMATIC / tETH**: Indicates test tokens
-- No real costs are incurred with test tokens
-
-### Step 6: Execute Mint
-
-1. Click the "Mint" button
-2. Review and approve the transaction in MetaMask
+1. Click the "**Mint**" button
+2. Click "**Confirm**" in MetaMask
 3. Wait for processing to complete
 
-### Step 7: Verify Results
+### Step 6: Verify Results
 
-#### Check on Testnet Explorer
+After minting, verify through:
 
-After successful minting, verify the transaction.
+| Where | How |
+|:------|:----|
+| CLOSM i | "Minted" badge appears on artwork |
+| Testnet Explorer | Search by transaction hash |
 
-| Chain | Explorer |
-|-------|----------|
-| Polygon Amoy | https://amoy.polygonscan.com |
-| Sepolia | https://sepolia.etherscan.io |
-
-Click the transaction hash shown on the completion screen.
-
-#### Check on Testnet Marketplace
-
-Testnet NFTs can be verified at:
-
-- [Rarible Testnet](https://testnet.rarible.com) - Connect wallet and check My Collection
-
-:::note
-Testnet NFTs do not appear on the production OpenSea site.
+:::note[Not visible on OpenSea]
+Testnet NFTs do not appear on the production OpenSea site. You can verify them on [Rarible Testnet](https://testnet.rarible.com).
 :::
 
 ---
 
-## Test Scenarios
+## FAQ
 
-### Basic Tests
+### Q: Test tokens didn't arrive
 
-| # | Test Item | Expected Result |
-|---|-----------|-----------------|
-| 1 | Mint on Polygon Amoy | Success, verifiable on explorer |
-| 2 | Mint on Sepolia (Premium) | Success, verifiable on explorer |
-| 3 | Mint with insufficient balance | Error displayed, button disabled |
-| 4 | Mint after reaching monthly limit | Error displayed, button disabled |
-
-### Error Case Tests
-
-| # | Test Item | Expected Result |
-|---|-----------|-----------------|
-| 1 | Reject in MetaMask | "Signature cancelled" error |
-| 2 | During network disconnection | Appropriate error message |
-| 3 | Access with Free plan | Mint button disabled, upgrade prompt |
-
-### Plan-Based Tests
-
-| Plan | Polygon Amoy | Sepolia |
-|------|--------------|---------|
-| Free | Not available | Not available |
-| Lite | Available (3/month) | Not available |
-| Premium | Available (10/month) | Available (3/month) |
-
----
-
-## Troubleshooting
-
-### Test tokens not received
-
-- You may have hit the faucet's daily limit
-- Try a different faucet or wait until the next day
+**A:** You may have hit the faucet's daily limit.
+- Try again the next day
 - Verify your wallet address is correct
 
-### Cannot connect to network
+### Q: Can't connect to network
 
-- Check MetaMask network settings
-- Verify RPC URL is correct
-- If using VPN, temporarily disable it
+**A:** Check your MetaMask settings.
+- Verify network information is entered correctly
+- If still not working, contact your administrator
 
-### Transaction fails
+### Q: Transaction keeps failing
 
-- Verify sufficient gas funds
-- Check network congestion status
-- Wait a few minutes and retry
+**A:** Please check the following:
+- Do you have enough test tokens?
+- Wait a few minutes and try again
 
-### Testnet banner not displayed
+### Q: Can't access test environment
 
-- Verify `DEPLOY_ENV` environment variable is set correctly
-- Restart the development server
-
----
-
-## Environment Variable Reference
-
-### Web (.env)
-
-```bash
-# Environment (development / staging / production)
-NEXT_PUBLIC_DEPLOY_ENV=development
-
-# RPC URLs (testnet)
-NEXT_PUBLIC_POLYGON_CHAIN_RPC_URL=https://polygon-amoy.g.alchemy.com/v2/YOUR_KEY
-NEXT_PUBLIC_ETHEREUM_CHAIN_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY
-```
-
-### API (.env)
-
-```bash
-# Environment
-DEPLOY_ENV=development
-
-# RPC URLs (testnet)
-POLYGON_CHAIN_RPC_URL=https://polygon-amoy.g.alchemy.com/v2/YOUR_KEY
-ETHEREUM_CHAIN_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY
-
-# Contract addresses (testnet)
-POLYGON_CHAIN_CONTRACT=0xEF0dBBDf5A3a45dAF6CEA4F4748d154A4F27eaA1
-ETHEREUM_CHAIN_CONTRACT=0x5ddE85BD9989F12dDBcAC135ADA44e2651BCDDdD
-```
+**A:** Contact your administrator.
+- Access permissions may need to be verified
 
 ---
 
-## Related Links
+## Need Help?
 
-### Faucets
+If you encounter issues during testing, contact your administrator with the following information.
 
-- [Polygon Faucet](https://faucet.polygon.technology/)
-- [Sepolia Faucet](https://sepoliafaucet.com/)
-- [Alchemy Sepolia Faucet](https://www.alchemy.com/faucets/ethereum-sepolia)
+:::note[Information to include when reporting]
+- Description of the problem
+- Steps you performed
+- Error message (if displayed)
+- Screenshot (if available)
+:::
 
-### Explorers
+---
 
-- [Polygon Amoy Scan](https://amoy.polygonscan.com)
-- [Sepolia Etherscan](https://sepolia.etherscan.io)
+## Related Pages
 
-### Marketplace (Testnet)
-
-- [Rarible Testnet](https://testnet.rarible.com)
+- [Wallet Setup](/i/nft/setup/) - How to set up MetaMask
+- [Minting Process](/i/nft/create/) - Production minting steps
+- [FAQ](/i/nft/faq/) - Other common questions

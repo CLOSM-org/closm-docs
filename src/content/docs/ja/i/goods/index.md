@@ -22,6 +22,7 @@ sidebar:
 | [配送](/ja/i/goods/shipping/) | 配送期間、対応地域、追跡 |
 | [注文履歴](/ja/i/goods/history/) | 注文状況の確認方法 |
 | [FAQ](/ja/i/goods/faq/) | よくある質問とトラブル対応 |
+| [テスト環境](/ja/i/goods/testing/) | テスト環境でグッズ注文を試す |
 
 ---
 

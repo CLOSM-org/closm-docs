@@ -22,6 +22,7 @@ Turn your fractal art into **custom merchandise** like phone cases.
 | [Shipping](/i/goods/shipping/) | Delivery times, supported regions |
 | [Order History](/i/goods/history/) | How to check order status |
 | [FAQ](/i/goods/faq/) | Common questions and troubleshooting |
+| [Testing Environment](/i/goods/testing/) | Try merchandise ordering in the test environment |
 
 ---
 

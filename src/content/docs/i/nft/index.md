@@ -20,7 +20,7 @@ By making your artwork an NFT, ownership is verified on the blockchain, and it b
 | [Supported Chains](/i/nft/chains/) | Polygon vs Ethereum comparison |
 | [Pricing & Plans](/i/nft/plans/) | Monthly mint limits and pricing |
 | [FAQ](/i/nft/faq/) | Common questions and troubleshooting |
-| [Testing Guide](/i/nft/testing/) | Testing in dev/staging environments (for developers) |
+| [Testing Environment](/i/nft/testing/) | Try NFT minting in the test environment |
 
 ---
 
