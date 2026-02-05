@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import { ion } from 'starlight-ion-theme';
+import starlightThemeNova from 'starlight-theme-nova';
 import starlightAutoSidebar from 'starlight-auto-sidebar';
 
 export default defineConfig({
@@ -28,7 +28,7 @@ export default defineConfig({
           autogenerate: { directory: 'i' },
         },
       ],
-      plugins: [starlightAutoSidebar(), ion()],
+      plugins: [starlightAutoSidebar(), starlightThemeNova()],
       customCss: [
         '@fontsource-variable/inter',
         '@fontsource-variable/noto-sans-jp',
