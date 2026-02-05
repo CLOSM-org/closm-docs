@@ -4,6 +4,7 @@
 
 | Document | Content |
 |----------|---------|
+| [starlight-customization.md](./starlight-customization.md) | Theme customization levels, CSS variables, component overrides |
 | [deployment/README.md](./deployment/README.md) | AWS infrastructure, CI/CD, troubleshooting |
 
 ## Tech Stack
