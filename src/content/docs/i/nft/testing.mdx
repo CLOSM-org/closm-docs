@@ -13,13 +13,19 @@ In the test environment, you can experience NFT minting **without using real mon
 
 ## What is the Test Environment?
 
-> 💡 The test environment is prepared for feature verification and practice before production release.
+The test environment is prepared for feature verification and practice before production release.
+
+### Test Environment URL
+
+```
+https://dev.i.closm.llc
+```
 
 ### Differences from Production
 
 | Item | Test Environment | Production |
 |:-----|:-----------------|:-----------|
-| URL | Test URL | https://i.closm.llc |
+| URL | https://dev.i.closm.llc | https://i.closm.llc |
 | Money used | **Free test tokens** | Real cryptocurrency |
 | NFT value | None (practice) | Real NFTs |
 | Blockchain | Testnet | Mainnet |
@@ -34,7 +40,7 @@ No real money is spent in the test environment. It's okay to make mistakes.
 
 In the test environment, you can distinguish it from production by these indicators.
 
-### 🧪 Testnet Banner
+### Testnet Banner
 
 A warning banner appears at the top of the page.
 
@@ -46,10 +52,10 @@ A warning banner appears at the top of the page.
 
 | Production | Test Environment |
 |:-----------|:-----------------|
-| MATIC | **t**MATIC |
-| ETH | **t**ETH |
+| MATIC | tMATIC |
+| ETH | tETH |
 
-The "**t**" prefix indicates test tokens.
+The "t" prefix indicates test tokens.
 
 ### Chain Names
 
@@ -57,6 +63,7 @@ The "**t**" prefix indicates test tokens.
 |:-----------|:-----------------|
 | Polygon | 🧪 Polygon Amoy |
 | Ethereum | 🧪 Sepolia |
+| Base | 🧪 Base Sepolia |
 
 ---
 
@@ -64,11 +71,7 @@ The "**t**" prefix indicates test tokens.
 
 ### 1. Access to Test Environment
 
-The test environment URL will be provided by your administrator.
-
-:::note[If you don't know how to access]
-Please contact your team administrator or development team.
-:::
+Test environment URL: **https://dev.i.closm.llc**
 
 ### 2. Test Account
 
@@ -115,6 +118,15 @@ Test MATIC will arrive within a few minutes.
 Faucets have daily limits. If you need more, try again the next day.
 :::
 
+### Base Sepolia (Test ETH)
+
+1. Go to **[Base Sepolia Faucet](https://www.alchemy.com/faucets/base-sepolia)**
+2. Log in with your Alchemy account
+3. Paste your MetaMask wallet address
+4. Click "**Send Me ETH**"
+
+Alternatively, you can bridge ETH obtained from Sepolia using [Base Bridge](https://sepolia-bridge.base.org/).
+
 ---
 
 ## Adding Testnet to MetaMask
@@ -137,13 +149,33 @@ To use the test environment, add the test network to MetaMask.
 | Currency Symbol | `MATIC` |
 | Block Explorer | `https://amoy.polygonscan.com` |
 
+### Adding Sepolia
+
+| Field | Value |
+|:------|:------|
+| Network Name | `Sepolia` |
+| RPC URL | `https://rpc.sepolia.org` |
+| Chain ID | `11155111` |
+| Currency Symbol | `ETH` |
+| Block Explorer | `https://sepolia.etherscan.io` |
+
+### Adding Base Sepolia
+
+| Field | Value |
+|:------|:------|
+| Network Name | `Base Sepolia` |
+| RPC URL | `https://sepolia.base.org` |
+| Chain ID | `84532` |
+| Currency Symbol | `ETH` |
+| Block Explorer | `https://sepolia.basescan.org` |
+
 ---
 
 ## Testing Steps
 
 ### Step 1: Log in to Test Environment
 
-1. Access the test environment URL
+1. Access https://dev.i.closm.llc
 2. Log in with your test account
 3. Verify the 🧪 mark is displayed
 
@@ -162,6 +194,7 @@ Select one artwork to mint.
 | Recommended | Description |
 |:------------|:------------|
 | **🧪 Polygon Amoy** | Low gas fees, quick completion (beginner-friendly) |
+| 🧪 Base Sepolia | Base chain testing |
 | 🧪 Sepolia | Ethereum testing |
 
 ### Step 5: Execute Mint
@@ -179,8 +212,16 @@ After minting, verify through:
 | CLOSM i | "Minted" badge appears on artwork |
 | Testnet Explorer | Search by transaction hash |
 
-:::note[Not visible on OpenSea]
-Testnet NFTs do not appear on the production OpenSea site. You can verify them on [Rarible Testnet](https://testnet.rarible.com).
+### Testnet Explorers
+
+| Chain | Explorer URL |
+|:------|:-------------|
+| Polygon Amoy | https://amoy.polygonscan.com |
+| Sepolia | https://sepolia.etherscan.io |
+| Base Sepolia | https://sepolia.basescan.org |
+
+:::note[OpenSea Verification]
+Testnet NFTs do not appear on the production OpenSea site. You can verify them on [OpenSea Testnets](https://testnets.opensea.io).
 :::
 
 ---
@@ -189,25 +230,25 @@ Testnet NFTs do not appear on the production OpenSea site. You can verify them o
 
 ### Q: Test tokens didn't arrive
 
-**A:** You may have hit the faucet's daily limit.
+You may have hit the faucet's daily limit:
 - Try again the next day
 - Verify your wallet address is correct
 
 ### Q: Can't connect to network
 
-**A:** Check your MetaMask settings.
+Check your MetaMask settings:
 - Verify network information is entered correctly
-- If still not working, contact your administrator
+- Check if RPC URL is correct
 
 ### Q: Transaction keeps failing
 
-**A:** Please check the following:
+Please check the following:
 - Do you have enough test tokens?
 - Wait a few minutes and try again
 
 ### Q: Can't access test environment
 
-**A:** Contact your administrator.
+Contact your administrator:
 - Access permissions may need to be verified
 
 ---

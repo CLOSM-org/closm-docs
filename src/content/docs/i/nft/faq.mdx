@@ -31,9 +31,12 @@ The NFT contains the original image data. Even if you edit the artwork on CLOSM 
 
 ## Wallet Questions
 
-### Q: Can I use wallets other than MetaMask?
+### Q: Which wallets can I use?
 
-Currently, CLOSM i supports MetaMask and WalletConnect-compatible wallets.
+CLOSM i supports the following wallets:
+
+- **MetaMask** - Recommended
+- **WalletConnect-compatible wallets** - Rainbow, Trust Wallet, etc.
 
 ### Q: Can I change my wallet address?
 
@@ -45,13 +48,39 @@ No. Wallet connection alone incurs no fees. Gas fees are required when executing
 
 ---
 
+## Chain Questions
+
+### Q: Which chain should I choose?
+
+| Purpose | Recommended Chain |
+|:--------|:------------------|
+| First-time NFT creation | Polygon or Base |
+| Minimize costs | Polygon or Base |
+| Already have ETH | Base |
+| Already have MATIC | Polygon |
+| High-value sales | Ethereum (Premium only) |
+
+### Q: Can I change the chain later?
+
+No. Once minted, NFTs cannot be moved to another chain. Choose carefully before minting.
+
+### Q: Can I mint the same artwork on multiple chains?
+
+No. One artwork can only be minted as an NFT on one chain.
+
+---
+
 ## Minting Questions
 
 ### Q: How long does minting take?
 
 It varies by chain:
-- **Polygon**: A few seconds to 1 minute
-- **Ethereum**: Several seconds to a few minutes
+
+| Chain | Processing Time |
+|:------|:----------------|
+| Polygon | A few seconds to 1 minute |
+| Base | A few seconds to 1 minute |
+| Ethereum | Several seconds to a few minutes |
 
 ### Q: Can I mint the same artwork multiple times?
 
@@ -64,8 +93,11 @@ No. You can only mint artworks you created.
 ### Q: Can I mint unlimited NFTs?
 
 There are monthly limits by plan:
-- Lite: Polygon 3/month
-- Premium: Polygon 10/month, Ethereum 3/month
+
+| Plan | Polygon | Base | Ethereum |
+|:-----|:--------|:-----|:---------|
+| Lite | 3/month | 3/month | - |
+| Premium | 10/month | 10/month | 3/month |
 
 ---
 
@@ -76,7 +108,7 @@ There are monthly limits by plan:
 Check the following:
 
 1. Wait a few minutes after minting (reflection may take time)
-2. Confirm you selected the correct chain (Polygon/Ethereum) on OpenSea
+2. Confirm you selected the correct chain (Polygon/Ethereum/Base) on OpenSea
 3. Check if it's in the "Hidden" tab
 4. Confirm you're logged in with the correct MetaMask account
 
@@ -95,7 +127,7 @@ Yes. It complies with the ERC-721 standard, so it displays on compatible marketp
 ### Mint button is disabled
 
 | Cause | Solution |
-|-------|----------|
+|:------|:---------|
 | Wallet not connected | Connect wallet on NFT page |
 | No artwork selected | Select one artwork |
 | Free plan | Upgrade to Lite/Premium |
@@ -104,7 +136,7 @@ Yes. It complies with the ERC-721 standard, so it displays on compatible marketp
 ### Cannot select chain
 
 | Cause | Solution |
-|-------|----------|
+|:------|:---------|
 | Selecting Ethereum (Lite plan) | Upgrade to Premium |
 | Free plan | Upgrade to Lite/Premium |
 
@@ -118,11 +150,13 @@ Your wallet lacks gas funds:
 
 ### Transaction failed
 
-1. **Network congestion**: Wait a while and retry
-2. **Insufficient gas**: Add more gas and retry
-3. **MetaMask issue**: Reload the extension and retry
+| Cause | Solution |
+|:------|:---------|
+| Network congestion | Wait a while and retry |
+| Insufficient gas | Add more gas and retry |
+| Wallet issue | Reload the extension and retry |
 
-### MetaMask popup doesn't appear
+### Wallet popup doesn't appear
 
 1. Click the MetaMask extension icon to unlock
 2. Check browser popup blocker settings
@@ -130,9 +164,22 @@ Your wallet lacks gas funds:
 
 ### Stuck on "Awaiting signature"
 
-1. Check for MetaMask popup (may be in another window)
-2. Click "Confirm" in MetaMask
+1. Check for wallet popup (may be in another window)
+2. Click "Confirm" in your wallet
 3. If rejected, execute mint again
+
+### "Signature expired" error
+
+The signature validity period (30 minutes) has expired:
+
+1. Reload the page
+2. Execute mint again
+
+### "Nonce mismatch" error
+
+1. Reload the page
+2. Clear browser cache
+3. Execute mint again
 
 ---
 
@@ -142,7 +189,7 @@ If the above doesn't resolve your issue, please contact support.
 
 Including the following information helps resolve issues faster:
 
-- Wallet address (not personal information)
+- Wallet address
 - Selected chain
 - Error message (if displayed)
 - Date and time of occurrence

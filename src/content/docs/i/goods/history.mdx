@@ -7,22 +7,29 @@ sidebar:
 
 ## How to Check
 
-1. Open **My Page**
-2. Tap **"Order History"**
+View your order history at `/goods/orders`.
+
+1. Open the Goods page (`/goods`)
+2. Select **"Order History"** from the sidebar or navigation
 3. View order list
+
+:::tip[Direct Access]
+You can also directly access `https://i.closm.llc/goods/orders`.
+:::
 
 ---
 
 ## Order Status
 
-| Status | Meaning | Action |
-|:-------|:--------|:-------|
-| 🟡 **Processing** | Order received, preparing | Wait |
-| 🔵 **In Production** | Manufacturing | Wait |
-| 🟣 **Quality Check** | Inspecting quality | Wait |
-| 🟢 **Shipped** | Handed to carrier | Track |
-| ✅ **Delivered** | Complete | - |
-| 🔴 **Cancelled** | Order cancelled | Contact support |
+| Status | Code | Meaning | Action |
+|:-------|:-----|:--------|:-------|
+| 🔘 **Pending** | pending | Awaiting payment | Complete payment |
+| 🟡 **Paid** | paid | Payment complete, preparing | Wait |
+| 🔵 **Processing** | processing | Manufacturing & quality check | Wait |
+| 🟢 **Shipped** | shipped | Handed to carrier | Track shipment |
+| ✅ **Delivered** | delivered | Complete | - |
+| 🔴 **Canceled** | canceled | Order cancelled | Check refund |
+| ⚠️ **Failed** | failed | Order processing failed | Contact support |
 
 ---
 

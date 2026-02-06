@@ -11,7 +11,16 @@ To mint NFTs, you need a crypto wallet and gas fees (transaction fees).
 
 ## What is a Wallet?
 
-A wallet is a tool for managing NFTs and assets on the blockchain. CLOSM i recommends **MetaMask**.
+A wallet is a tool for managing NFTs and assets on the blockchain.
+
+### Supported Wallets
+
+CLOSM i supports the following wallets:
+
+| Wallet | Description |
+|:-------|:------------|
+| **MetaMask** | Most popular browser extension wallet (recommended) |
+| **WalletConnect-compatible wallets** | Rainbow, Trust Wallet, etc. |
 
 :::note
 Never share your wallet's private key or seed phrase with anyone. Losing these can result in loss of assets.
@@ -46,12 +55,13 @@ Write down your seed phrase on paper and store it in a safe place. If storing di
 
 CLOSM i uses the following networks:
 
-| Network | Use |
-|---------|-----|
-| Polygon | Low-cost minting (recommended) |
-| Ethereum | Mainnet minting |
+| Network | Use | Gas Currency |
+|:--------|:----|:-------------|
+| Polygon | Low-cost minting (recommended) | MATIC |
+| Ethereum | Mainnet minting | ETH |
+| Base | Low-cost minting | ETH |
 
-MetaMask connects to Ethereum mainnet by default. For Polygon, additional setup is needed, but CLOSM i's NFT page will prompt you to switch networks automatically during minting.
+MetaMask connects to Ethereum mainnet by default. For Polygon or Base, additional setup is needed, but CLOSM i's NFT page will prompt you to switch networks automatically during minting.
 
 ---
 
@@ -61,12 +71,13 @@ MetaMask connects to Ethereum mainnet by default. For Polygon, additional setup 
 
 Fees required to execute transactions on the blockchain. These are needed when minting NFTs.
 
-### Required Currency
+### Required Currency and Estimates
 
-| Chain | Currency | Estimated Amount |
-|-------|----------|------------------|
-| Polygon | MATIC | 0.01–0.1 MATIC |
-| Ethereum | ETH | 0.001–0.01 ETH |
+| Chain | Currency | Normal | Congested |
+|:------|:---------|:-------|:----------|
+| Polygon | MATIC | $0.01–0.05 | ~$0.10 |
+| Ethereum | ETH | $0.50–2.00 | $5.00+ |
+| Base | ETH | $0.01–0.10 | ~$0.50 |
 
 :::tip
 Gas fees fluctuate based on network congestion. Check the actual estimate on the NFT page.
@@ -74,14 +85,14 @@ Gas fees fluctuate based on network congestion. Check the actual estimate on the
 
 ### How to Obtain
 
-You can obtain MATIC or ETH through:
+**MATIC (for Polygon):**
+1. Purchase at a crypto exchange
+2. Bridge from ETH using [Polygon Bridge](https://wallet.polygon.technology/)
+3. Send to your MetaMask address
 
-1. **Purchase at a crypto exchange**
-   - Buy ETH at exchanges (Coinbase, Binance, etc.)
-   - Get MATIC via bridge or supported exchanges
-
-2. **Transfer from another wallet**
-   - Send to your MetaMask address
+**ETH (for Ethereum / Base):**
+1. Purchase at an exchange (Coinbase, Binance, etc.)
+2. Send to your MetaMask address
 
 ---
 
@@ -92,14 +103,20 @@ You can obtain MATIC or ETH through:
 1. Log in to CLOSM i
 2. Open the NFT page
 3. Click "Connect" in the "Wallet Connection" section
-4. Approve the connection in MetaMask popup
+4. Select MetaMask or WalletConnect from the wallet selection screen
+5. Approve the connection in your wallet popup
 
 ### Confirming Connection
 
 Once connected:
 - Your wallet address is displayed
 - Balance is visible
+- Current network is displayed
 - Minting features become available
+
+### Network Switching
+
+If connected to a different network than your selected chain during minting, you'll be prompted to switch automatically. Click "Approve" in your wallet popup.
 
 ---
 

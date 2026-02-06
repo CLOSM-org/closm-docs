@@ -26,40 +26,63 @@ Total is shown at checkout.
 
 Click "Proceed to Checkout" from the cart to go to the checkout page (`/goods/checkout`).
 
+```
+Enter Address → Calculate Shipping → Select Method → Stripe Payment
+```
+
+---
+
 ### Step 1: Enter Shipping Address
 
 | Field | Required | Description |
 |:------|:--------:|:------------|
 | **Name** | Yes | Recipient name |
-| **Postal/ZIP Code** | Yes | |
+| **Country** | - | Auto-set based on cart (cannot change) |
+| **Postal/ZIP Code** | Yes | Japan: `123-4567` / US: `12345` |
 | **State/Province** | Yes | Select from dropdown |
 | **City** | Yes | |
 | **Address 1** | Yes | Street address |
 | **Address 2** | No | Apt, suite, building |
 | **Phone** | No | |
 
-:::note
-Shipping country is automatically set based on the product added to cart.
+:::note[Shipping Country]
+Shipping country is fixed based on the product added to cart. To ship to a different country, clear your cart and re-select products.
 :::
 
-### Step 2: Select Shipping Method
+---
 
-After entering the address, available shipping methods and rates are displayed.
+### Step 2: Calculate Shipping
 
-- Shipping cost and delivery time vary by method
-- Select your preferred option
+After entering your address, click the **"Calculate Shipping"** button.
 
-### Step 3: Payment
+- Postal/ZIP code and State/Province are required
+- Clicking the button displays available shipping methods and rates
 
-After selecting shipping method, you'll be redirected to **Stripe** payment page.
+---
+
+### Step 3: Select Shipping Method
+
+Select a shipping method from the calculated results.
+
+| Display | Description |
+|:--------|:------------|
+| **Method Name** | e.g., Standard |
+| **Delivery Days** | e.g., 5-10 business days |
+| **Shipping Cost** | Displayed in USD |
+
+---
+
+### Step 4: Payment
+
+After selecting a shipping method, click **"Proceed to Payment"** to be redirected to the **Stripe** payment page.
 
 | Method | Brands |
 |:-------|:-------|
 | **Credit Cards** | Visa / Mastercard / American Express, etc. |
 | **Debit Cards** | Debit cards with above brands |
 
-:::note[Billing]
-Charged upon payment completion. Cannot cancel after production starts.
+:::caution[Billing]
+Charged upon payment completion. **Cannot cancel after production starts.**
 :::
 
 ---

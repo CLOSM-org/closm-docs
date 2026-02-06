@@ -19,9 +19,10 @@ In the test environment, you can experience the entire merchandise creation and 
 
 | Item | Test Environment | Production |
 |:-----|:-----------------|:-----------|
-| URL | Test URL | https://i.closm.llc |
+| URL | https://dev.i.closm.llc | https://i.closm.llc |
 | Payment | **Test cards** (no charges) | Real credit cards |
 | Order result | Not manufactured (practice) | Actually manufactured & shipped |
+| Data | Periodically reset | Permanently stored |
 
 :::tip[Feel free to try]
 No actual charges occur in the test environment. Orders won't be manufactured, so feel free to experiment.
@@ -33,10 +34,14 @@ No actual charges occur in the test environment. Orders won't be manufactured, s
 
 ### 1. Access to Test Environment
 
-The test environment URL will be provided by your administrator.
+Access the test environment at:
 
-:::note[If you don't know how to access]
-Please contact your team administrator or development team.
+```
+https://dev.i.closm.llc
+```
+
+:::note[Access Permissions]
+Access to the test environment may require permissions. Contact your administrator if you cannot access.
 :::
 
 ### 2. Test Account
@@ -127,19 +132,41 @@ Click "**Add to Cart**".
 ### Step 7: Checkout
 
 1. Review contents on cart page
-2. Click "**Checkout**"
-3. You'll be redirected to Stripe payment screen
+2. Click "**Proceed to Checkout**"
+3. You'll be taken to the checkout page
 
-### Step 8: Test Payment
+### Step 8: Enter Shipping Address
 
-Enter **test card information** on the payment screen.
+1. Enter **Name**
+2. Enter **Postal/ZIP code** (Japan: `100-0001`, US: `12345`)
+3. Select **State/Province** from dropdown
+4. Enter **City** and **Address 1**
 
-1. Card number: `4242 4242 4242 4242`
-2. Expiry: Any future date
-3. CVC: Any 3 digits
+:::note[Shipping Country]
+Shipping country is auto-set based on your cart items.
+:::
+
+### Step 9: Calculate Shipping
+
+1. After entering address, click "**Calculate Shipping**"
+2. Shipping methods and rates will be displayed
+3. Select a shipping method (e.g., Standard)
+
+### Step 10: Test Payment
+
+1. Click "**Proceed to Payment**"
+2. You'll be redirected to Stripe payment screen
+3. Enter **test card information**
+
+| Field | Value |
+|:------|:------|
+| Card Number | `4242 4242 4242 4242` |
+| Expiry | Any future date (e.g., `12/30`) |
+| CVC | Any 3 digits (e.g., `123`) |
+
 4. Click "**Pay**"
 
-### Step 9: Verify Order Completion
+### Step 11: Verify Order Completion
 
 After payment, you can verify:
 

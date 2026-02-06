@@ -15,7 +15,7 @@ Before starting, confirm the following:
 
 - [ ] Logged into CLOSM i
 - [ ] Have at least one artwork
-- [ ] MetaMask wallet ready
+- [ ] MetaMask or WalletConnect-compatible wallet ready
 - [ ] Gas fees (MATIC or ETH) available
 - [ ] Subscribed to Lite or Premium plan
 
@@ -31,12 +31,12 @@ Navigate to the "NFT" page from the sidebar or navigation menu.
 
 ### Step 2: Connect Your Wallet
 
-Click the "Connect" button in the "Wallet Connection" section and approve in MetaMask.
+Click the "Connect" button in the "Wallet Connection" section and approve in your wallet.
 
 After connecting, you'll see:
 - Your wallet address
 - Current balance
-- This month's usage (mint count)
+- This month's usage (mint count by chain)
 
 ### Step 3: Select Artwork
 
@@ -54,12 +54,13 @@ You can only select one artwork at a time. To mint multiple artworks, mint them 
 Select the blockchain for minting.
 
 | Chain | Features | Available Plans |
-|-------|----------|-----------------|
-| Polygon | Low cost, beginner-friendly | Lite / Premium |
+|:------|:---------|:----------------|
+| Polygon | Low cost, fast, beginner-friendly | Lite / Premium |
+| Base | Low cost, fast | Lite / Premium |
 | Ethereum | High liquidity, widely adopted | Premium only |
 
 :::tip
-For beginners, **Polygon** is recommended. Gas fees are low and minting completes in seconds.
+For beginners, **Polygon** or **Base** is recommended. Gas fees are low and minting completes in seconds.
 :::
 
 ### Step 5: Check Gas Fees
@@ -70,6 +71,7 @@ Shown information:
 - Estimated gas (MATIC/ETH)
 - USD equivalent
 - Current balance
+- Network status (Normal/Congested/Very Congested)
 
 :::caution
 If your balance is less than the gas fee, the mint button will be disabled. Add more funds for gas.
@@ -81,13 +83,16 @@ Click the "Mint" button.
 
 The following steps execute in sequence:
 
-1. **Preparing** - Generating metadata
-2. **Awaiting signature** - Click "Confirm" in MetaMask popup
-3. **Confirming** - Waiting for blockchain processing
-4. **Completed** - Mint successful
+| Step | Description |
+|:-----|:------------|
+| **Preparing** | Generating metadata and preparing signature |
+| **Awaiting signature** | Click "Confirm" in wallet popup |
+| **Confirming** | Waiting for blockchain processing |
+| **Completed** | Mint successful |
 
-:::note[Processing Time]
+:::note[Processing Time Estimates]
 - Polygon: A few seconds to 1 minute
+- Base: A few seconds to 1 minute
 - Ethereum: Several seconds to a few minutes
 :::
 
@@ -102,6 +107,7 @@ After successful minting, verify through:
 1. **On CLOSM i**
    - "Minted" badge appears on the artwork
    - Transaction hash is viewable
+   - Link to block explorer
 
 2. **On OpenSea**
    - Access directly via "View on OpenSea" link on completion screen
@@ -111,11 +117,18 @@ After successful minting, verify through:
 
 The minted NFT contains:
 
-- Artwork title
-- Artwork description
-- Image data (hosted on CDN)
-- Generation parameters (Mandelbrot coordinates, zoom, resolution, etc.)
-- Creator information
+| Field | Content |
+|:------|:--------|
+| Title | Artwork name |
+| Description | Artwork description |
+| Image | High-resolution image hosted on CDN |
+| Region | Mandelbrot region classification (Main Cardioid, Seahorse Valley, etc.) |
+| Zoom Level | Zoom level (Overview to Ultra Zoom) |
+| Detail Level | Detail level (based on iterations value) |
+| Color Palette | Color palette classification |
+| Resolution | Image resolution |
+| Chain | Minted chain |
+| Creator | Creator information |
 
 ---
 
@@ -124,12 +137,14 @@ The minted NFT contains:
 ### Checklist
 
 | Symptom | Check |
-|---------|-------|
+|:--------|:------|
 | Mint button disabled | Confirm wallet is connected |
 | Cannot select artwork | Check if already minted |
-| Cannot select chain | Check your plan (Free cannot use) |
+| Cannot select chain | Check your plan (Free cannot use, Ethereum is Premium only) |
 | Insufficient balance error | Add more gas funds |
+| "Monthly limit reached" | Wait until reset on the 1st of next month |
 | Transaction failed | Check network status and retry |
+| Signature expired error | Reload page and retry |
 
 → [FAQ & Troubleshooting](/i/nft/faq/)
 
@@ -137,5 +152,5 @@ The minted NFT contains:
 
 ## Next Steps
 
-- [Supported chains details](/i/nft/chains/) - Learn more about Polygon/Ethereum
+- [Supported chains details](/i/nft/chains/) - Learn more about Polygon/Ethereum/Base
 - [Pricing & plans details](/i/nft/plans/) - Check monthly mint limits
